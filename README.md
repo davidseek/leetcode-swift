@@ -8,4 +8,4 @@ Runtime: 0 ms, faster than 100.00% of Swift online submissions for Valid Parenth
 
 All challenges are copyright by https://leetcode.com/ and their respective authors.
 
-I'm solely providing the solutions as well as parts of the questions and examples for context.
+I'm solely providing my solutions as well as questions and examples for context.
