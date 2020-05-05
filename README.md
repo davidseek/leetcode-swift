@@ -6,5 +6,5 @@ Runtime: 0 ms, faster than 100.00% of Swift online submissions for Valid Parenth
 * [#20 Valid Parentheses](https://leetcode.com/problems/valid-parentheses/)
 * [#844 BAckspace String Compare](https://leetcode.com/problems/backspace-string-compare/)
 
-All challenges are 100% copyright by https://leetcode.com/ and their respective authors.
+All challenges are copyright by https://leetcode.com/ and their respective authors.
 I'm only providing the solutions as well as parts of the questions and examples for context.
