@@ -63,18 +63,18 @@ Can you solve it in O(N) time and O(1) space?
 */
 
 func backspaceCompare(_ S: String, _ T: String) -> Bool {
-	var sQueue = Queue<Character>()
-	var tQueue = Queue<Character>()
+	var sStack = Stack<Character>()
+	var tStack = Stack<Character>()
 		
 	for character in S {
 			
 		if character == "#" {
 				
-			sQueue.dequeue()
+			sStack.pop()
 				
 		} else {
 				
-			sQueue.enqueue(character)
+			sStack.push(character)
 		}
 	}
 		
@@ -82,22 +82,22 @@ func backspaceCompare(_ S: String, _ T: String) -> Bool {
 			
 		if character == "#" {
 				
-			tQueue.dequeue()
+			tStack.pop()
 				
 		} else {
 				
-			tQueue.enqueue(character)
+			tStack.push(character)
 		}
 	}
 		
-	guard sQueue.count == tQueue.count else {
+	guard sStack.count == tStack.count else {
 		return false
 	}
 		
-	for _ in 0..<sQueue.count {
+	for _ in 0..<sStack.count {
 			
-		let s = sQueue.dequeue()
-		let t = tQueue.dequeue()
+		let s = sStack.pop()
+		let t = tStack.pop()
 			
 		guard s == t else {
 			return false
@@ -107,7 +107,7 @@ func backspaceCompare(_ S: String, _ T: String) -> Bool {
 	return true
 }
 
-struct Queue<Element: Equatable> {
+struct Stack<Element: Equatable> {
 	var array: [Element]
 	
 	init() {
@@ -126,12 +126,12 @@ struct Queue<Element: Equatable> {
 		return array.count
 	}
 	
-	mutating public func enqueue(_ element: Element) {
+	mutating public func push(_ element: Element) {
 		array.append(element)
 	}
 	
 	@discardableResult
-	mutating public func dequeue() -> Element? {
+	mutating public func pop() -> Element? {
 		return array.popLast()
 	}
 }

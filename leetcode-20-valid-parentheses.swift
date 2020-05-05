@@ -63,8 +63,8 @@ Output: true
 
 func isValid(_ s: String) -> Bool {
 	
-	// Init a Character Queue
-	var queue = Queue<Character>()
+	// Init a Character Stack
+	var stack = Stack<Character>()
 	
 	// Iterate through given string
 	for character in s {
@@ -72,13 +72,13 @@ func isValid(_ s: String) -> Bool {
 		// Check if the character is (, { or [
 		if isOpen(character) {
 			
-			// If so put into the queue
-			queue.enqueue(character)
+			// If so put into the stack
+			stack.push(character)
 			
 		} else {
 			
-			// Dequeue the last element of the queue
-			guard let element = queue.dequeue() else {
+			// Pop the last element of the stack
+			guard let element = stack.pop() else {
 				return false 
 			}
 			
@@ -89,9 +89,9 @@ func isValid(_ s: String) -> Bool {
 		}
 	}
 		
-	// Check if the Queue is empty
+	// Check if the Stack is empty
 	// If not then we did not close all brackets
-	return queue.isEmpty 
+	return stack.isEmpty 
 }
 
 func isOpen(_ character: Character) -> Bool {
@@ -100,20 +100,20 @@ func isOpen(_ character: Character) -> Bool {
 	character == "["
 }
 
-func isOpposite(_ character: Character, of queueElement: Character) -> Bool {
+func isOpposite(_ character: Character, of stackElement: Character) -> Bool {
 	if character == ")" {
-		return queueElement == "("
+		return stackElement == "("
 	}
 	
 	if character == "}" {
-		return queueElement == "{"
+		return stackElement == "{"
 	}
 	
 	// character must be ]
-	return queueElement == "["
+	return stackElement == "["
 }
 
-struct Queue<Element: Equatable> {
+struct Stack<Element: Equatable> {
 	private var array: [Element]
 	
 	public var peek: Element? {
@@ -128,11 +128,11 @@ struct Queue<Element: Equatable> {
 		array = []		
 	}
 	
-	mutating public func enqueue(_ element: Element) {
+	mutating public func push(_ element: Element) {
 		array.append(element)
 	}
 	
-	mutating public func dequeue() -> Element? {
+	mutating public func pop() -> Element? {
 		return array.popLast()
 	}
 }
