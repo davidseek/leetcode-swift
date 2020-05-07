@@ -62,22 +62,36 @@ Can you solve it in O(N) time and O(1) space?
 
 */
 
+/**
+Big O Annotation
+Time complexity O(n) where n is the combined character length of S and T.
+Space complexity O(n) where n is the combined character length of S and T.
+*/
 func backspaceCompare(_ S: String, _ T: String) -> Bool {
+
+	/**
+	Stacks to hold the characters of each S and T
+	*/
 	var sStack = Stack<Character>()
 	var tStack = Stack<Character>()
 		
+	// Iterate through S
 	for character in S {
 			
+		// And for every # pop the last..
 		if character == "#" {
 				
+			// ... character in the stack
 			sStack.pop()
 				
 		} else {
 				
+			// Otherwise push the characters into the stack
 			sStack.push(character)
 		}
 	}
 		
+	// Same as for S
 	for character in T {
 			
 		if character == "#" {
@@ -89,21 +103,35 @@ func backspaceCompare(_ S: String, _ T: String) -> Bool {
 			tStack.push(character)
 		}
 	}
-		
+
+	/**
+	Check if the amount of elements in the stack is equal
+	if not then there is no chance for us to create the same strings.
+	*/	
 	guard sStack.count == tStack.count else {
 		return false
 	}
 		
+	/**
+	We know the length of the stacks is equal
+	so we can iterate through either of them...
+	*/
 	for _ in 0..<sStack.count {
 			
+		// To get the last elements of both stacks
 		let s = sStack.pop()
 		let t = tStack.pop()
-			
+		
+		// If they differ return false
 		guard s == t else {
 			return false
 		}
 	}
-		
+	
+	/**
+	If we fell through the iteration we 
+	can return true as we've checked for proper equality.
+	*/
 	return true
 }
 

@@ -71,6 +71,12 @@ struct Log {
 	}
 }
 
+/**
+Big O Annotation
+Time complexity O(n) where n is the number of logs in the array.
+Space complexity O(n) as we're holding at least every log entry 
+once at the same time in memory.
+*/
 func reorderLogFiles(_ logs: [String]) -> [String] {
 				
 	var numLogs: [String] = []

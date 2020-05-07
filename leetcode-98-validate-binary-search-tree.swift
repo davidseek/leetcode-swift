@@ -57,6 +57,11 @@ Output: false
 Explanation: The root node's value is 5 but its right child's value is 4.
 */
 
+/**
+Big O Annotation
+Time complexity O(n) where n is the amount of nodes in the tree.
+Space complexity O(1) where not using any extra space.
+*/
 func isValidBST(_ root: TreeNode?) -> Bool {
 	return root?.isValidBST() ?? true
 }

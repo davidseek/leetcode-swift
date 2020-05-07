@@ -78,6 +78,12 @@ Each node has a unique integer value from 1 to 100.
 
 */
 
+/**
+Big O Annotation
+Time complexity O(n) where n is the number of nodes in the tree.
+Space complexity O(1) is constant as we only create at most
+2x TreeNodeCousinParameters objects to hold the parameters we're looking for.
+*/
 func isCousins(_ root: TreeNode?, _ x: Int, _ y: Int) -> Bool {
 		
     // There wont be any cousins if root is nil

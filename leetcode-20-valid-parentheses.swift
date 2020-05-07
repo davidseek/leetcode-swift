@@ -61,6 +61,12 @@ Output: true
 
 */
 
+/**
+Big O Annotation
+Time complexity O(n) where n is the amount of characters in s.
+Space complexity O(n log n) as we're 
+always at most holding 1/2 of characters in n
+*/
 func isValid(_ s: String) -> Bool {
 	
 	// Init a Character Stack
