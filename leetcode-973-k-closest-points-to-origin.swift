@@ -56,6 +56,13 @@ Output: [[3,3],[-2,4]]
 Big O Annotation
 Time complexity O(n) where n is the number elements in points.
 Space complexity O(n) where n is the number elements in points.
+
+PS: I've also tried to solve the same challenge using a heap.
+But due to the siftDown/Up nature of adding elements to the heap,
+the final run time was taking just as long... 🤷🏻‍♂️
+
+In my presented way we save a 
+considerable amount of boilerplate code.
 */
 func kClosest(_ points: [[Int]], _ K: Int) -> [[Int]] {
         
