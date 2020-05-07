@@ -8,6 +8,7 @@ Runtime: 0 ms, faster than 100.00% of Swift online submissions for Valid Parenth
 * [#20 Valid Parentheses](https://leetcode.com/problems/valid-parentheses/)
 * [#98 Validate Binary Search Tree](https://leetcode.com/problems/validate-binary-search-tree/)
 * [#200 Number of Islands](https://leetcode.com/problems/number-of-islands/)
+* [#347 Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements/)
 * [#844 BAckspace String Compare](https://leetcode.com/problems/backspace-string-compare/)
 * [#937 Reorder Data in Log Files](https://leetcode.com/problems/reorder-data-in-log-files/)
 * [#993 Cousins in Binary Tree](https://leetcode.com/problems/cousins-in-binary-tree/)
