@@ -5,6 +5,8 @@ Runtime: 0 ms, faster than 100.00% of Swift online submissions for Valid Parenth
 
 * [#1 Two Sum](https://leetcode.com/problems/two-sum/)
 * [#2 Add Two Number](https://leetcode.com/problems/add-two-numbers/) 
+* [#12 Integer to Roman](https://leetcode.com/problems/integer-to-roman/) 
+* [#13 Roman to Integer](https://leetcode.com/problems/roman-to-integer/) 
 * [#20 Valid Parentheses](https://leetcode.com/problems/valid-parentheses/)
 * [#98 Validate Binary Search Tree](https://leetcode.com/problems/validate-binary-search-tree/)
 * [#200 Number of Islands](https://leetcode.com/problems/number-of-islands/)
