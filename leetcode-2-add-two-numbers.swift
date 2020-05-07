@@ -133,7 +133,7 @@ func addTwoNumbers(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {
     so we can later return head.next 
     to lost the -1 root
     */ 
-    var head: ListNode? = dummy
+    let head: ListNode? = dummy
     
     // Iterate through the result
     for element in result {
