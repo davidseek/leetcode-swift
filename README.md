@@ -4,6 +4,7 @@ My goal is to provide access to my solutions and to have most of them in the per
 Runtime: 0 ms, faster than 100.00% of Swift online submissions for Valid Parentheses.
 
 * [#20 Valid Parentheses](https://leetcode.com/problems/valid-parentheses/)
+* [#98 Validate Binary Search Tree](https://leetcode.com/problems/validate-binary-search-tree/)
 * [#844 BAckspace String Compare](https://leetcode.com/problems/backspace-string-compare/)
 * [#937 Reorder Data in Log Files](https://leetcode.com/problems/reorder-data-in-log-files/)
 
