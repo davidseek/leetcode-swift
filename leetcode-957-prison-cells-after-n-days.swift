@@ -47,15 +47,17 @@ Time complexity O(1)
 Space complexity O(1) 
 
 I would argue that we have constant time and space.
-We know for sure, that cells is an array of the size 8.
-That is a constant attribute.
 
-And we know, that after 14 days, the cycle repeats.
-There AT MOST we have to calculate 14 days.
+We know for sure, that we have exactly 8 elements in cells.
+That is a constant term.
 
+And we know that after 14 days, the cycle repeats.
+Therefore AT MOST we calculate the new cells state 14 for 14 days.
 14 is also a constant. 
-Therefore even if N is one billion, we only do 14 iterations
-to calculate the new state of the 8 cells.
+
+Therefore even if N is one billion, 
+we only do 14 iterations to calculate 
+the new state of the 8 cells.
 
 2x constants. Ergo: constant time and space complexity.
 */
