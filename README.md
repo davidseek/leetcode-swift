@@ -10,6 +10,7 @@ Runtime: 0 ms, faster than 100.00% of Swift online submissions for Valid Parenth
 * [#13 Roman to Integer](https://leetcode.com/problems/roman-to-integer/) 
 * [#20 Valid Parentheses](https://leetcode.com/problems/valid-parentheses/)
 * [#42 Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/)
+* [#48 Rotate Image](https://leetcode.com/problems/rotate-image/)
 * [#98 Validate Binary Search Tree](https://leetcode.com/problems/validate-binary-search-tree/)
 * [#200 Number of Islands](https://leetcode.com/problems/number-of-islands/)
 * [#347 Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements/)
