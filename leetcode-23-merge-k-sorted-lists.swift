@@ -43,8 +43,10 @@ Output: 1->1->2->3->4->4->5->6
 
 /**
 Big O Annotation
-Time complexity O(n) where n is the amount of elements in nums.
-Space complexity O(n) where n is the amount of elements in nums.
+Time complexity O(n) where n is the amount of elements in lists.
+Space complexity O(n) where n is the amount of elements in lists.
+
+We're dropping the none dominant Swift sort term O(log n)
 */
 func mergeKLists(_ lists: [ListNode?]) -> ListNode? {
         
