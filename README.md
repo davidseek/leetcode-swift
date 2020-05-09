@@ -24,6 +24,7 @@ Runtime: 0 ms, faster than 100.00% of Swift online submissions for Valid Parenth
 * [#957 Prison Cells After N Days](https://leetcode.com/problems/prison-cells-after-n-days/)
 * [#973 K Closest Points to Origin](https://leetcode.com/problems/k-closest-points-to-origin/)
 * [#993 Cousins in Binary Tree](https://leetcode.com/problems/cousins-in-binary-tree/)
+* [#1232 Check If Is Is a Straight Line](https://leetcode.com/problems/check-if-it-is-a-straight-line/)
 * [#1431 Kids With the Greatest Number of Candies](https://leetcode.com/problems/kids-with-the-greatest-number-of-candies/)
 
 All challenges are copyright by https://leetcode.com/ and their respective authors.
