@@ -18,6 +18,7 @@ Runtime: 0 ms, faster than 100.00% of Swift online submissions for Valid Parenth
 * [#160 Intersection of Two Linked Lists](https://leetcode.com/problems/intersection-of-two-linked-lists/)
 * [#189 Rotate Array](https://leetcode.com/problems/rotate-array/)
 * [#200 Number of Islands](https://leetcode.com/problems/number-of-islands/)
+* [#206 Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/)
 * [#240 Search a 2D Matrix II](https://leetcode.com/problems/search-a-2d-matrix-ii/)
 * [#297 Serialize and Deserialize Binary Tree](https://leetcode.com/problems/serialize-and-deserialize-binary-tree/)
 * [#347 Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements/)
