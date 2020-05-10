@@ -76,8 +76,8 @@ target is strictly increasing.
 
 /**
 Big O Annotation
-Time complexity O(n) where n is the amount of elements in nums.
-Space complexity O(n) where n is the amount of elements in nums.
+Time complexity O(n) where n is the amount of elements between 1 and n.
+Space complexity O(n) where n is the amount of elements in target.
 */
 func buildArray(_ target: [Int], _ n: Int) -> [String] {
         
