@@ -45,8 +45,8 @@ Output: [1,2,2,3,5,6]
 
 /**
 Big O Annotation
-Time complexity O(n) where n is the amount of elements in nums.
-Space complexity O(n) where n is the amount of elements in nums.
+Time complexity O(mn) we're running linear m * n through the 2 pointer approach.
+Space complexity O(n) we're not using any extra space.
 */
 func merge(_ nums1: inout [Int], _ m: Int, _ nums2: [Int], _ n: Int) {
 	
