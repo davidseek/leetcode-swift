@@ -52,6 +52,10 @@ Big O Annotation
 Time complexity O(n log m).
 
 I would argue that we have n log m time complexity.
+
+"n" for the iteration.
+"log m" for the sort (Swift Array.sort has O(log n) complexity)
+
 We iterate through the tickets and we need to sort
 the destinations in our adjency list alphabetically.
 "n" is the number of source airports, 
