@@ -39,6 +39,7 @@ Runtime: 0 ms, faster than 100.00% of Swift online submissions for Valid Parenth
 * [#997 Find the Town Judge](https://leetcode.com/problems/find-the-town-judge/)
 * [#1232 Check If Is Is a Straight Line](https://leetcode.com/problems/check-if-it-is-a-straight-line/)
 * [#1431 Kids With the Greatest Number of Candies](https://leetcode.com/problems/kids-with-the-greatest-number-of-candies/)
+* [#1441 Build an Array With Stack Operations](https://leetcode.com/contest/weekly-contest-188/problems/build-an-array-with-stack-operations/)
 
 All challenges are copyright by https://leetcode.com/ and their respective authors.
 
