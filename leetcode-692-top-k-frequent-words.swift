@@ -51,7 +51,7 @@ Try to solve it in O(n log k) time and O(n) extra space.
 
 /**
 Big O Annotation
-Time complexity O(n) where n is the amount of elements in words.
+Time complexity O(n log n) because of the sorting overhead.
 Space complexity O(n) where n is the amount of elements in words.
 */
 func topKFrequent(_ words: [String], _ k: Int) -> [String] {

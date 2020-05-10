@@ -48,7 +48,7 @@ You can return the answer in any order.
 
 /**
 Big O Annotation
-Time complexity O(n) where n is the amount of elements in nums.
+Time complexity O(n log n) because of the sorting overhead.
 Space complexity O(n) where n is the amount of elements in nums.
 */
 func topKFrequent(_ nums: [Int], _ k: Int) -> [Int] {

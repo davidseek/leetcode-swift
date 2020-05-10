@@ -57,7 +57,7 @@ Output: [true,false,true]
 
 /**
 Big O Annotation
-Time complexity O(n) where n is the number of candies.
+Time complexity O(n log n) because of the sorting overhead.
 Space complexity O(n) as we're creating the sorted array.
 
 Space could be optimized by not sorting first,

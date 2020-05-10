@@ -54,7 +54,7 @@ Output: [[3,3],[-2,4]]
 
 /**
 Big O Annotation
-Time complexity O(n) where n is the number elements in points.
+Time complexity O(n log n) because of the sorting overhead.
 Space complexity O(n) where n is the number elements in points.
 
 PS: I've also tried to solve the same challenge using a heap.
