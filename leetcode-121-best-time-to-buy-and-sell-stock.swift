@@ -41,39 +41,34 @@ Explanation: In this case, no transaction is done, i.e. max profit = 0.
 
 /**
 Big O Annotation
-Time complexity O(n) where n is the amount of elements in prices.
+Time complexity O(n^2) where n is the amount of elements in prices.
+We have O(n^2 - n) since our inner loop starts at n-i ... which is O(n^2)
+
 Space complexity O(1) we're not using any extra space.
 */
- func maxProfit(_ prices: [Int]) -> Int {
+func maxProfit(_ prices: [Int]) -> Int {
 		
-    // Get two pointers...
-    var leftPointer: Int = 0
-    var rightPointer: Int = 0
-
-    // And a reference to the maximum profit
+    // Get a reference to the maximum profit
     var maximumProfit: Int = Int.min
     
     // While we still have elements to process...
-    while leftPointer < prices.count {
-        
-        // ... get the first elements
-        let start = prices[leftPointer]
-    
-        // And while the right pointer has not exhausted the bounds....
-        while rightPointer < prices.count {
-        
-            /**
-            Make sure that the right pointer is 
-            not equal to the left pointer....
-            */
-            if leftPointer != rightPointer {
-            
-                // Get the price at the right pointer
-                let end = prices[rightPointer]
+    for (index, startPrice) in prices.enumerated() {
 
+        // Iterate away from the current index
+        for j in index..<prices.count {
+
+            // Get the price at the right pointer
+            let endPrice = prices[j]
+
+            /**
+            First check if we even can
+            make a profit... If not we might
+            as well skip the calculation.
+            */
+            if endPrice < startPrice {
+                
                 // ... and the sum 
-                let sum = end - start 
-            
+                let sum = endPrice - startPrice 
                 /**
                 Update the maximum profit
                 comparing the last maxium profit and 
@@ -81,15 +76,7 @@ Space complexity O(1) we're not using any extra space.
                 */
                 maximumProfit = max(maximumProfit, sum)
             }
-        
-            // Move the right pointer towards the end.
-            rightPointer += 1
         }
-    
-        // And move to the next number
-        leftPointer += 1
-        // Start the right pointer on the left pointer
-        rightPointer = leftPointer
     }
 
     /**
