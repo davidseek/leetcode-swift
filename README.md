@@ -13,6 +13,7 @@ Runtime: 0 ms, faster than 100.00% of Swift online submissions for Valid Parenth
 * [#42 Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/)
 * [#48 Rotate Image](https://leetcode.com/problems/rotate-image/)
 * [#58 Length of Last Word](https://leetcode.com/problems/length-of-last-word/)
+* [#88 Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/)
 * [#98 Validate Binary Search Tree](https://leetcode.com/problems/validate-binary-search-tree/)
 * [#155 Min Stack](https://leetcode.com/problems/min-stack/)
 * [#160 Intersection of Two Linked Lists](https://leetcode.com/problems/intersection-of-two-linked-lists/)
