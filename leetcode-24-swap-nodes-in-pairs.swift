@@ -45,13 +45,23 @@ func swapPairs(_ head: ListNode?) -> ListNode? {
         return head
     }
     
-    // Get a reference to the current next node
+    /**
+    Get a reference to the current next node
+    In this example: [1,2,3,4],
+    we have now [2,3,4]
+    */
     let next = head?.next
 
-    // Call recursively on next's next
+    /**
+    Now we're computing [1]'s next,
+    with parameter next?.next what is right now [3,4]
+    That will give us [1,3,4]
+    and that iteration called again
+    will give us [1,4,3]
+    */
     head?.next = swapPairs(next?.next)
 
-    // Set head as next's next 
+    // Set [2]'s next to [1,4,3]
     next?.next = head
 
     // And return
