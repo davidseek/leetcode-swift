@@ -13,6 +13,7 @@ Runtime: 0 ms, faster than 100.00% of Swift online submissions for Valid Parenth
 * [#20 Valid Parentheses](https://leetcode.com/problems/valid-parentheses/)
 * [#21 Merge Two Sorted Lists](https://leetcode.com/problemset/all/) 
 * [#23 Merge k Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/)
+* [#24 Swap Nodes in Pairs](https://leetcode.com/problems/swap-nodes-in-pairs/)
 * [#42 Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/)
 * [#48 Rotate Image](https://leetcode.com/problems/rotate-image/)
 * [#53 Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)
