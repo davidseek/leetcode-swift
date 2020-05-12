@@ -44,6 +44,7 @@ Runtime: 0 ms, faster than 100.00% of Swift online submissions for Valid Parenth
 * [#509 Fibonacci Number](https://leetcode.com/problems/fibonacci-number/)
 * [#657 Robot Return to Origin](https://leetcode.com/problems/robot-return-to-origin/)
 * [#692 Top K Frequent Words](https://leetcode.com/problems/top-k-frequent-words/)
+* [#700 Search in a Binary Search Tree](https://leetcode.com/problems/search-in-a-binary-search-tree/)
 * [#706 Design HashMap](https://leetcode.com/problems/design-hashmap/) 
 * [#773 Flood Fill](https://leetcode.com/problems/flood-fill/)
 * [#811 Subdomain Visit Count](https://leetcode.com/problems/subdomain-visit-count/)
