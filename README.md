@@ -37,6 +37,7 @@ Runtime: 0 ms, faster than 100.00% of Swift online submissions for Valid Parenth
 * [#200 Number of Islands](https://leetcode.com/problems/number-of-islands/)
 * [#203 Remove Linked List Elements](https://leetcode.com/problems/remove-linked-list-elements/)
 * [#206 Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/)
+* [#208 Implement Trie (Prefix Tree)](https://leetcode.com/problems/implement-trie-prefix-tree/)
 * [#232 Implement Queue using Stacks](https://leetcode.com/problems/implement-queue-using-stacks/)
 * [#234 Palindrome Linked List](https://leetcode.com/problems/palindrome-linked-list/)
 * [#236 Lowest Common Ancestor of a Binary Tree](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/)
