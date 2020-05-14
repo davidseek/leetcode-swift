@@ -37,6 +37,66 @@ Output: 1->2->3->4->5
 */
 
 /**
+In place approach.
+Faster -> Gets us into the 100$ range.
+And doesn't use any space.
+
+Big O Annotation
+Time complexity O(n) where n is the amount of nodes in head.
+Space complexity O(1) where removing in place / not using extra space.
+*/
+func removeElements(_ head: ListNode?, _ val: Int) -> ListNode? {
+        
+    // Return nil if we don't have a head node
+    guard let head = head else {
+        return nil
+    }
+
+    // Get a reference to the head
+    var current: ListNode? = head
+    
+    // Check that the head doesn't need to be removed
+    while current != nil && current!.val == val {
+
+        // If so, set the next node as new head
+        current = current?.next
+    }
+    
+    // Store a reference to the final head
+    var root: ListNode? = current
+    
+    // While we still have nodes...
+    while current != nil {
+        
+        // Check, that the next one exists and is not .val == val
+        while current!.next != nil && current!.next!.val == val {
+
+            /**
+            If so, cut the node out and set to next.next
+            Will be repeated until we don't have .val == val
+            */
+            current!.next = current!.next!.next
+        }
+        
+        /**
+        We need to make sure, that the final .next.val
+        is not .val for niche cases
+        */
+        if current!.next?.val == val {
+            current!.next = nil
+        }
+        
+        // Continue with the next .next
+        current = current?.next
+    }
+    
+    return root
+}
+
+/**
+Stored values approach. 
+Takes longer and is less space efficient.
+
 Big O Annotation
 Time complexity O(n) where n is the amount of nodes in head.
 Space complexity O(n) where n is the amount of nodes in head.
