@@ -35,6 +35,7 @@ Runtime: 0 ms, faster than 100.00% of Swift online submissions for Valid Parenth
 * [#167 Two Sum II - Input array is sorted](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/)
 * [#189 Rotate Array](https://leetcode.com/problems/rotate-array/)
 * [#200 Number of Islands](https://leetcode.com/problems/number-of-islands/)
+* [#203 Remove Linked List Elements](https://leetcode.com/problems/remove-linked-list-elements/)
 * [#206 Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/)
 * [#234 Palindrome Linked List](https://leetcode.com/problems/palindrome-linked-list/)
 * [#236 Lowest Common Ancestor of a Binary Tree](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/)
