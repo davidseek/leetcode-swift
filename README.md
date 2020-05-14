@@ -55,6 +55,7 @@ Runtime: 0 ms, faster than 100.00% of Swift online submissions for Valid Parenth
 * [#448 Find All Numbers Disappeared in an Array](https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/)
 * [#509 Fibonacci Number](https://leetcode.com/problems/fibonacci-number/)
 * [#540 Single Element in a Sorted Array](https://leetcode.com/problems/single-element-in-a-sorted-array/)
+* [#637 Average of Levels in Binary Tree](https://leetcode.com/problems/average-of-levels-in-binary-tree/)
 * [#657 Robot Return to Origin](https://leetcode.com/problems/robot-return-to-origin/)
 * [#692 Top K Frequent Words](https://leetcode.com/problems/top-k-frequent-words/)
 * [#700 Search in a Binary Search Tree](https://leetcode.com/problems/search-in-a-binary-search-tree/)
