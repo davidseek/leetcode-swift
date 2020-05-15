@@ -67,6 +67,7 @@ Runtime: 0 ms, faster than 100.00% of Swift online submissions for Valid Parenth
 * [#773 Flood Fill](https://leetcode.com/problems/flood-fill/)
 * [#811 Subdomain Visit Count](https://leetcode.com/problems/subdomain-visit-count/)
 * [#844 BAckspace String Compare](https://leetcode.com/problems/backspace-string-compare/)
+* [#918 Maximum Sum Circular Subarray](https://leetcode.com/problems/maximum-sum-circular-subarray/)
 * [#937 Reorder Data in Log Files](https://leetcode.com/problems/reorder-data-in-log-files/)
 * [#957 Prison Cells After N Days](https://leetcode.com/problems/prison-cells-after-n-days/)
 * [#966 Vowel Spellchecker](https://leetcode.com/problems/vowel-spellchecker/)
