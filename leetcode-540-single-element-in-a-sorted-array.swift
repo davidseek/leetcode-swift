@@ -47,121 +47,109 @@ Note: Your solution should run in O(log n) time and O(1) space.
 
 /**
 Big O Annotation
-Time complexity O(log n) where n is the amount of elements in nums.
-The two pointers put our workload in half.
-
-Space complexity O(1) We have constant space 
-as we're only storing at most 4 elements.
-4 is a constant value.
+Time complexity O(log n) where n is the number of elements in nums.
+Space complexity O(1) we're not using any extra space
 */
 func singleNonDuplicate(_ nums: [Int]) -> Int {
-    
-    // If the array is empty, return -1
-    guard !nums.isEmpty else {
-        return -1
-    }
-    
-    // If the array has exactly 1 element, return it
-    guard nums.count > 1 else {
-        return nums[0]
-    }
-    
-    // Get two pointers for left and right
+            
+    /**
+    The idea is to have a binary search approach.
+
+             0 1 2 3 4  5  6 
+            [3,3,7,7,10,11,11]
+    Round 1  l     m        r
+    Round 2        l  m     r
+
+    Every round we're cutting the amount
+    of elements we need to check in half.
+
+    First we'll get a left, a right and a mid pointer.
+    */
     var leftPointer: Int = 0
     var rightPointer: Int = nums.count - 1
+    var midPointer: Int = rightPointer / 2
     
-    /**
-    Init two queues. The idea is to:
-    store one element in the queue
-    and then take it out and compare it.
-    */
-    var leftQueue = QueueStack()
-    var rightQueue = QueueStack()
-            
-    // Make sure that the pointers haven't crossed yet
-    while leftPointer <= rightPointer {
+    // While the pointers havent crossed
+    while leftPointer < rightPointer {
         
-        // Get the right and left element
-        let left = nums[leftPointer]
-        let right = nums[rightPointer]
+        /**
+        Check if the current index is even.
+        If the index is even, then we know, 
+        that we need a counter part of the element 
+        at the index at the right.
+
+        Example above: 
+        Index 0, Element 3, Index 1, Element 3
+        Index 2, Element 7, Index 3, Element 7
+        */
+        let evenIndex: Bool = midPointer % 2 == 0
         
-        // If the stack is empty
-        if leftQueue.isEmpty {
+        /**
+        We're going to initiate the nextMatch and lastMatch
+        variables as true booleans as we consider it
+        true if there is no next or last neightbor.
+
+        Those cases are true when we're running out of array bounds.
+        For example index 0 hast no neighbor on the left. 
+        -1 is out of bounds.
+        */
+        var nextMatch: Bool = true
+        var lastMatch: Bool = true
+        
+        // Check if we're in bounds
+        if midPointer < nums.count - 1 {
+
+            /**
+            And then check if the neighbor 
+            equals the current expected mid point.
+            */
+            nextMatch = nums[midPointer] == nums[midPointer + 1]
+        }
+        
+        // Same as with the nextMatch above
+        if midPointer > 0 {
+            lastMatch = nums[midPointer] == nums[midPointer - 1]
+        }
+
+        /**
+        If we have no match partner to the left
+        or to the right, then we know for sure,
+        that the current mid element IS the 
+        value we where looking for.
+        */
+        if !nextMatch && !lastMatch {
+            return nums[midPointer]
+        }
+        
+        /**
+        Othwise we check if for an even index
+        we have a match to thre right,
+        or for an odd index a match to the left.
+        */
+        if evenIndex && nextMatch || !evenIndex && lastMatch {
             
-            // Add it to the stack
-            leftQueue.enqueue(left)
+            /**
+            If so, then set the mid as the next left pointer 
+            as we know, that everything on the mid 
+            is perfect.
+            */
+            leftPointer = midPointer + 1
             
         } else {
-
-            // If not, then dequeue
-            let dequeued = leftQueue.dequeue()!
             
-            // And compare
-            if dequeued != left {
-                return dequeued
-            }
+            // Otherwise move the right pointer to the middle
+            rightPointer = midPointer - 1
         }
         
-        // Same as for the left side
-        if rightQueue.isEmpty {
-            
-            rightQueue.enqueue(right)
-            
-        } else {
-            
-            let dequeued = rightQueue.dequeue()!
-            
-            if dequeued != right {
-                return dequeued
-            }
-        }
+        // Calculate the new mid point based on the new boundaries.
+        midPointer = leftPointer + ((rightPointer - leftPointer) / 2)
         
-        // Move the pointers along
-        leftPointer += 1
-        rightPointer -= 1
     }
-    
+
     /**
-    If we have an odd array and we made 
-    it till here, we have a case like:
-    [1,1,2,3,3]
-    
-    Our loop did not recognize the mid element
-    and now we need to simply return it
-    as the rest of the array passed our tests.
-    */
-    if (nums.count % 2) != 0 {
-        return nums[nums.count / 2]
-    }
-    
-    return -1
-}
-
-/**
-Queue implementation.
-All operations are constant in time.
-*/
-struct QueueStack {
-    
-    private var enqueueStack: [Int] = []
-    private var dequeueStack: [Int] = []
-    
-    init() {}
-    
-    public var isEmpty: Bool {
-        return enqueueStack.isEmpty && dequeueStack.isEmpty
-    } 
-    
-    public mutating func enqueue(_ element: Int) {
-        enqueueStack.append(element)
-    }
-    
-    public mutating func dequeue() -> Int? {
-        if dequeueStack.isEmpty {
-            dequeueStack = enqueueStack.reversed()
-            enqueueStack.removeAll()
-        }
-        
-        return dequeueStack.popLast()
-    }
+    Once we've arrived here, the element
+    pointed at by the midPointer
+    must be the candidate.
+    */ 
+    return nums[midPointer]
 }
