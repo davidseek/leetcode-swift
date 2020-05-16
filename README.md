@@ -67,6 +67,7 @@ Runtime: 0 ms, faster than 100.00% of Swift online submissions for Valid Parenth
 * [#637 Average of Levels in Binary Tree](https://leetcode.com/problems/average-of-levels-in-binary-tree/)
 * [#657 Robot Return to Origin](https://leetcode.com/problems/robot-return-to-origin/)
 * [#692 Top K Frequent Words](https://leetcode.com/problems/top-k-frequent-words/)
+* [#695 Max Area of Island](https://leetcode.com/problems/max-area-of-island/)
 * [#700 Search in a Binary Search Tree](https://leetcode.com/problems/search-in-a-binary-search-tree/)
 * [#706 Design HashMap](https://leetcode.com/problems/design-hashmap/) 
 * [#773 Flood Fill](https://leetcode.com/problems/flood-fill/)
