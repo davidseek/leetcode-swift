@@ -37,6 +37,7 @@ Runtime: 0 ms, faster than 100.00% of Swift online submissions for Valid Parenth
 * [#155 Min Stack](https://leetcode.com/problems/min-stack/)
 * [#160 Intersection of Two Linked Lists](https://leetcode.com/problems/intersection-of-two-linked-lists/)
 * [#167 Two Sum II - Input array is sorted](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/)
+* [#173 Binary Search Tree Iterator](https://leetcode.com/problems/binary-search-tree-iterator/)
 * [#189 Rotate Array](https://leetcode.com/problems/rotate-array/)
 * [#199 Binary Tree Right Side View](https://leetcode.com/problems/binary-tree-right-side-view/)
 * [#200 Number of Islands](https://leetcode.com/problems/number-of-islands/)
