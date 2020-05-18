@@ -64,6 +64,7 @@ Runtime: 0 ms, faster than 100.00% of Swift online submissions for Valid Parenth
 * [#509 Fibonacci Number](https://leetcode.com/problems/fibonacci-number/)
 * [#540 Single Element in a Sorted Array](https://leetcode.com/problems/single-element-in-a-sorted-array/)
 * [#547 Friend Circles](https://leetcode.com/problems/friend-circles/)
+* [#567 Permutation in String](https://leetcode.com/problems/permutation-in-string/)
 * [#572 Subtree of Another Tree](https://leetcode.com/problems/subtree-of-another-tree/)
 * [#637 Average of Levels in Binary Tree](https://leetcode.com/problems/average-of-levels-in-binary-tree/)
 * [#657 Robot Return to Origin](https://leetcode.com/problems/robot-return-to-origin/)
