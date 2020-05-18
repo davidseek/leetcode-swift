@@ -43,38 +43,58 @@ Space complexity O(n) where n is the combined amount of nodes in l1 + l2.
 */
 func mergeTwoLists(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {
 	
-    /**
-    If we have no list 1, we can just
-    return our list 2, if that is nil 
-    as well, then the total return will be nil
-    */
-    guard let list1 = l1 else {
+    // Check if l1 exists
+    guard let l1 = l1 else {
         return l2
     }
-
-    // Same for list 2
-    guard let list2 = l2 else {
+    
+    // Check if l2 exists
+    guard let l2 = l2 else {
         return l1
     }
+    
+    // Get a current node reference and a head to lose
+    var current: ListNode? = ListNode(-1)
 
-    // Our new head node
-    var resultList: ListNode? = nil
+    // Keep a reference of the head
+    var head: ListNode = current!
+    
+    // Get the current list references
+    var currentL1: ListNode? = l1
+    var currentL2: ListNode? = l2
+    
+    // While both lists still have work to do
+    while currentL1 != nil && currentL2 != nil {
+        
+        // Check if l1 is smaller or l2
+        if currentL1!.val <= currentL2!.val {
 
-    // Check if the node of 1 or 2 is smalled
-    if list1.val <= list2.val {
+            // Append the smaller element
+            current!.next = currentL1
 
-        // And add the smaller one to the head
-        resultList = list1 
-        // And continue the recursion with the next node
-        resultList!.next = mergeTwoLists(list1.next, list2)
+            // And update the reference
+            currentL1 = currentL1!.next
+        } else {
 
-    } else {
-
-        // Same as above
-        resultList = list2
-        resultList!.next = mergeTwoLists(list1, list2.next)
+            // Same as above
+            current!.next = currentL2
+            currentL2 = currentL2!.next
+        }
+        
+        // Move current along
+        current = current?.next
     }
-
-    // Return the new head
-    return resultList 
+    
+    // And append missing elements
+    if let list = currentL1 {
+        current?.next = list
+    }
+    
+    // Sane as above
+    if let list = currentL2 {
+        current?.next = list
+    }
+    
+    // Return head.next to lose the -1 node
+    return head.next
 }
