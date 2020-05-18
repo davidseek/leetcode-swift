@@ -78,16 +78,12 @@ func checkInclusion(_ s1: String, _ s2: String) -> Bool {
 
     // The starting index
     var index: Int = 0
-
-    // The result indices
-    var indices: [Int] = []
     
     /**
-    Check if the initial substring 
-    is an anagram of p
+    Check if the initial substring is an permutation
     */
     if queue.isInitiallyAnAnagram() {
-        indices.append(index)
+        return true
     }
     
     // Continue on the next elements
@@ -99,16 +95,16 @@ func checkInclusion(_ s1: String, _ s2: String) -> Bool {
         // Get the current character
         let character = s[index]
         
-        // And add it to the queue with evaluation
+        // Bingo if we got a permutation
         if queue.add(character) {
-            indices.append(index - length)
+            return true
         }
 
         // And proceed...
         index += 1
     }
 
-    return !indices.isEmpty
+    return false
 }
 
 /**
