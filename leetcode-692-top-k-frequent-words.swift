@@ -61,37 +61,27 @@ func topKFrequent(_ words: [String], _ k: Int) -> [String] {
     
     // Iterate through the words
     for word in words {
-        
         // .. and count them
-        if let mapped = hash[word] {
-            hash[word] = mapped + 1
-        } else {
-            hash[word] = 1
-        }
+        hash[word, default: 0] += 1
     }
     
     /**
     Sort by frequency or alternatively alphabetically, 
     as requested in the challenge
     */
-    let sorted = hash.sorted { element1, element2 in
+    let sorted: [(key: String, value: Int)] = hash.sorted { element1, element2 in
                                 
         if element1.value == element2.value {
             return element1.key < element2.key
         }
         return element1.value > element2.value
     }
-    
-    // Map from (key, value) to just the keys
-    let mapped: [String] = sorted.map { element in 
+
+    // Get only k elements...
+    let shrunk: [(key: String, value: Int)] = Array(sorted[0..<k])
+        
+    // And return only the key
+    return shrunk.map { element in 
         return element.key
     }
-    
-    /**
-    Return the desired amount.
-    Can safely be accessed through index
-    as the notes clearly state that 
-    k will always be valid.
-    */
-    return Array(mapped[0..<k])
 }
