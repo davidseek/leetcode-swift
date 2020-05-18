@@ -59,6 +59,7 @@ Runtime: 0 ms, faster than 100.00% of Swift online submissions for Valid Parenth
 * [#334 Reverse String](https://leetcode.com/problems/reverse-string/)
 * [#347 Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements/)
 * [#367 Valid Perfect Square](https://leetcode.com/problems/valid-perfect-square/)
+* [#380 Insert Delete GetRandom O(1)](https://leetcode.com/problems/insert-delete-getrandom-o1/)
 * [#402 Remove K Digits](https://leetcode.com/problems/remove-k-digits/)
 * [#412 Fizz Buzz](https://leetcode.com/problems/fizz-buzz/)
 * [#438 Find All Anagrams in a String](https://leetcode.com/problems/find-all-anagrams-in-a-string/)
