@@ -58,40 +58,37 @@ You may assume that next() call will always be valid, that is, there will be at 
 
 /**
 Big O Annotation
-Time complexity of the init is O(1) where n is the amount of nodes in root
+Time complexity of the init is O(n) where n is the amount of nodes in root
 Space complexity O(n) where n is the amount of nodes in root
 
 Every other operation has O(1) time complexity.
 */
 class BSTIterator {
     
-    private var root: TreeNode?
-    private var queue: [Int] = []
+    private var stack: [Int] = []
 
     init(_ root: TreeNode?) {
-        self.root = root
 
         // Get a queue of the reversed in order 
-        traverse(root) { queue.append($0) }
-        queue = queue.reversed()
+        traverse(root) { stack.append($0) }
     }
     
     /** @return the next smallest number */
     public func next() -> Int {
-        return queue.popLast() ?? 0
+        return stack.popLast() ?? 0
     }
     
     /** @return whether we have a next smallest number */
     public func hasNext() -> Bool {
-        return queue.last != nil
+        return !stack.isEmpty
     }
     
-    // Traverse the BST in order
+    // Traverse the BST reversed in order
     private func traverse(_ node: TreeNode?, _ visit: (Int) -> Void) {
         guard let node = node else { return }
-        traverse(node.left, visit)
-        visit(node.val)
         traverse(node.right, visit)
+        visit(node.val)
+        traverse(node.left, visit)
     }
 }
 
