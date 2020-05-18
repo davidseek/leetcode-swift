@@ -41,47 +41,34 @@ Explanation: In this case, no transaction is done, i.e. max profit = 0.
 
 /**
 Big O Annotation
-Time complexity O(n^2) where n is the amount of elements in prices.
-We have O(n^2 - n) since our inner loop starts at n-i ... which is O(n^2)
-
+Time complexity O(n) where n is the amount of elements in prices.
 Space complexity O(1) we're not using any extra space.
 */
 func maxProfit(_ prices: [Int]) -> Int {
-		
-    // Get a reference to the maximum profit
-    var maximumProfit: Int = Int.min
+	
+    // Init a minimum reference to the maximum integer
+    var minimum: Int = Int.max
+
+    // This will be our returned profit
+    var profit: Int = 0
     
-    // While we still have elements to process...
-    for (index, startPrice) in prices.enumerated() {
+    // For every element in prices...
+    for (index, element) in prices.enumerated() {
+        
+        // Check if we have found a new mimimum value
+        if element < minimum {
 
-        // Iterate away from the current index
-        for j in index..<prices.count {
-
-            // Get the price at the right pointer
-            let endPrice = prices[j]
-
+            // And update our local minimum
+            minimum = element
+        } else {
+            
             /**
-            First check if we even can
-            make a profit... If not we might
-            as well skip the calculation.
+            And check if we could make a 
+            larger profit if we'd sell today
             */
-            if endPrice < startPrice {
-                
-                // ... and the sum 
-                let sum = endPrice - startPrice 
-                /**
-                Update the maximum profit
-                comparing the last maxium profit and 
-                the current maxium profit 
-                */
-                maximumProfit = max(maximumProfit, sum)
-            }
+            profit = max(profit, element - minimum)
         }
     }
-
-    /**
-    Check if the maximum profit is a profit,
-    otherwise return 0
-    */
-    return (maximumProfit > 0) ? maximumProfit : 0
+    
+    return profit
 }
