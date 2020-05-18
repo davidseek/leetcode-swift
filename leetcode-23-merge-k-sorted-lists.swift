@@ -43,8 +43,9 @@ Output: 1->1->2->3->4->4->5->6
 
 /**
 Big O Annotation
-Time complexity O(n) where n is the amount of elements in lists.
-Space complexity O(n) where n is the amount of elements in lists.
+Time complexity O(n log n) where n is the total amount of nodes in all lists.
+The complexity is "n log n" because of the sort of the final array.
+Space complexity O(n) where n is the total amount of nodes in all lists.
 
 We're dropping the none dominant Swift sort term O(log n)
 */
