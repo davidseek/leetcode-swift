@@ -160,9 +160,7 @@ func orangesRotting(_ grid: [[Int]]) -> Int {
         }
 
         // Lastly we want to merge the rotten and newlyRotten oranges
-        for element in newlyRotten {
-            rotten.insert(element)
-        }
+        rotten = rotten.union(newlyRotten)
 
         // And update out counter
         result += 1
