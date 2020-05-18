@@ -76,10 +76,10 @@ func orangesRotting(_ grid: [[Int]]) -> Int {
     ]
 
     // Reference to our rotten oranges
-    var rotten: [String: Int] = [:]
+    var rotten: Set<String> = []
 
     // Reference to the fresh oranges
-    var fresh: [String: Int] = [:]
+    var fresh: Set<String> = []
 
     // Iterate through the matrix
     for (i, row) in grid.enumerated() {
@@ -91,12 +91,12 @@ func orangesRotting(_ grid: [[Int]]) -> Int {
             if orange == 2 {
 
                 // ... rotten...
-                rotten["\(i) \(j)"] = 0
+                rotten.insert("\(i) \(j)")
 
             } else if orange == 1 {
 
                 // ... or fresh
-                fresh["\(i) \(j)"] = 0
+                fresh.insert("\(i) \(j)")
             }
         }
     }	
@@ -105,20 +105,20 @@ func orangesRotting(_ grid: [[Int]]) -> Int {
     var result: Int = 0 
 
     // Now iterate while we still have fresh oranges
-    while fresh.count > 0 {
+    while !fresh.isEmpty {
     
         /**
         Store the newly rottenoranges
         to make sure we're not counting those
         within the current iteration
         */
-        var newlyRotten: [String: Int] = [:]
+        var newlyRotten: Set<String> = []
             
         // Iterate through the rotten oranges
-        for (key, _) in rotten {
+        for location in rotten {
         
             // Get the coordinates as ["0", "1"]
-            let coordinates = key.components(separatedBy: " ")
+            let coordinates = location.components(separatedBy: " ")
 
             // And get the row and column of the matrix
             let row = Int(coordinates[0])! // Example: "0" -> 0
@@ -132,17 +132,22 @@ func orangesRotting(_ grid: [[Int]]) -> Int {
 
                 // Get the directional column
                 let nextColumn = column + direction[1]
+
+                let location_ = "\(nextRow) \(nextColumn)"
             
                 /**
                 If we have a fresh orange at that coordinate,
                 add it to the newlyRotten oranges and
                 delete from the fresh oranges
                 */
-                if let _ = fresh["\(nextRow) \(nextColumn)"] {
-                    fresh["\(nextRow) \(nextColumn)"] = nil
-                    newlyRotten["\(nextRow) \(nextColumn)"] = 0
+                if fresh.contains(location_) {
+                    fresh.remove(location_)
+                    newlyRotten.insert(location_)
                 }
+
             }
+
+            rotten.remove(location)
         }
     
         /**
@@ -153,9 +158,11 @@ func orangesRotting(_ grid: [[Int]]) -> Int {
         if newlyRotten.isEmpty {
             return -1
         }
-    
+
         // Lastly we want to merge the rotten and newlyRotten oranges
-        rotten = rotten.merging(newlyRotten) { (current, _) in current }
+        for element in newlyRotten {
+            rotten.insert(element)
+        }
 
         // And update out counter
         result += 1
