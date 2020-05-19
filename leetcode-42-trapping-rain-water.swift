@@ -45,86 +45,65 @@ Time complexity O(n) where n is the amount of elements in nums.
 Space complexity O(n) where n is the amount of elements in nums.
 */
 func trap(_ height: [Int]) -> Int {
-	
-    /**
-    If we have no heights at all, 
-    we can't trap any rain water
-    */
-    guard height.count > 0 else {
+        
+    guard !height.isEmpty else {
         return 0
     }
 
-    var result: Int = 0
-    var level: Int = 0 
-
-    // Left pointer
-    var left: Int = 0
-
-    // Right pointer 
-    var right: Int = height.count - 1
-
     /**
-    While our pointers haven't crossed, 
-    keep on looping.
+    We want to precalculate the highest
+    building to the left and to the right
+    for every given index.
+
+    To reduce the complexity from O(n^2) to O(n)
     */
-    while left < right {
+    var lefties: [Int] = Array(repeating: 0, count: height.count)
+    lefties[0] = height[0]
+    
+    var righties: [Int] = Array(repeating: 0, count: height.count)
+    righties[height.count - 1] = height[height.count - 1]
+
+    // The final amount
+    var water: Int = 0
+    
+    /**
+    Iterate first through the heights
+    and get the highest building 
+    for every given index's left and right side
+    */
+    for i in 1..<height.count {
+
+        /**
+        The highest to the left is either
+        the one to the left or the current index.
+        */
+        lefties[i] = max(lefties[i - 1], height[i])
         
         /**
-        First we need to check if we have 
-        a wall to the left or a wall to the right
-
-        If the element at the left pointer is 
-        smaller than the element at the right pointer,
-        then we have a wall to the right.
-
-        If not, then we have a wall to the left.
+        Same on the right, but we count 
+        from the right to the left
         */
-        let wallTotheRight = height[left] < height[right]
-
-        /**
-        If we have a wall to the right,
-        get the left pointer's current element.
-
-        If we have a wall to the left,
-        get the right pointer's current element.
-        */
-        let index = wallTotheRight ? left : right 
-
-        /**
-        The current element of the desired pointer 
-        defines the current level
-        */
-        let currentLevel = height[index]
-
-        /**
-        Next we want to set the new level 
-        to the maximum between our old level and the 
-        current level.
-        */
-        level = max(level, currentLevel)
-
-        /**
-        Add the difference between the global level
-        and the current level to our result.
-        */
-        result += level - currentLevel
-    
-        /**
-        Lastly move the pointer without the wall 
-        further along. If we have a wall to the right,
-        we want to move the left pointer towards the right pointer.
-
-        If we have a wall to the left, we want to move the left pointer
-        towards the right pointer.
-        */
-        if wallTotheRight {
-            left += 1
-        } else {
-            right -= 1
-        }
+        let index = (height.count - 1) - i
+        righties[index] = max(righties[index + 1], height[index])
     }
+        
+    // And finally go through the array
+    for (index, element) in height.enumerated() {
+        
+        /**
+        Get the max amount of water each index could 
+        potentially hold based on the left and right walls
+        */
+        let maxWater: Int = min(lefties[index], righties[index])
 
-    return result
+        // And reduce by the index's own elevation
+        let actualWater: Int = maxWater - element
+
+        // Finally add the amount
+        water += actualWater
+    }
+    
+    return water
 }
 
 
