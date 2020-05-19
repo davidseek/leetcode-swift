@@ -19,6 +19,7 @@ Runtime: 0 ms, faster than 100.00% of Swift online submissions for Valid Parenth
 * [#53 Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)
 * [#58 Length of Last Word](https://leetcode.com/problems/length-of-last-word/)
 * [#70 Climbing Stairs](https://leetcode.com/problems/climbing-stairs/)
+* [#78 Subsets](https://leetcode.com/problems/subsets/)
 * [#88 Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/)
 * [#94 Binary Tree Inorder Traversal](https://leetcode.com/problems/binary-tree-inorder-traversal/)
 * [#98 Validate Binary Search Tree](https://leetcode.com/problems/validate-binary-search-tree/)
