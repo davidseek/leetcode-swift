@@ -126,3 +126,28 @@ func trap(_ height: [Int]) -> Int {
 
     return result
 }
+
+
+
+/**
+Brute force
+
+Big O Annotation
+Time complexity O(n^2) where n is the amount of elements in nums.
+Space complexity O(n) where n is the amount of elements in nums.
+*/
+func trap(_ height: [Int]) -> Int {
+        
+    var water: Int = 0
+    
+    for (index, element) in height.enumerated() {
+        
+        let leftMax: Int = Array(height[0...index]).max() ?? 0
+        let rightMax: Int = Array(height[index..<height.count]).max() ?? 0
+        let maxWater: Int = min(leftMax, rightMax)
+        let actualWater: Int = maxWater - element
+        water += actualWater
+    }
+    
+    return water
+}
