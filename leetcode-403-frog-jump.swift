@@ -66,6 +66,9 @@ Time complexity O(3^n) because of the 3 different choices we have,
 where n is the amount of elements in stones.
 Space complexity O(n) where n is the amount of elements in stones.
 */
+
+typealias Jump = (stone: Int, distance: Int)
+
 func canCross(_ stones: [Int]) -> Bool {
     
     // Reference to the goal, to make the code cleaner
