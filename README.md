@@ -47,6 +47,7 @@ Runtime: 0 ms, faster than 100.00% of Swift online submissions for Valid Parenth
 * [#207 Course Schedule](https://leetcode.com/problems/course-schedule/)
 * [#208 Implement Trie (Prefix Tree)](https://leetcode.com/problems/implement-trie-prefix-tree/)
 * [#210 Course Schedule II](https://leetcode.com/problems/course-schedule-ii/)
+* [#230 Kth Smallest Element in a BST](https://leetcode.com/problems/kth-smallest-element-in-a-bst/)
 * [#232 Implement Queue using Stacks](https://leetcode.com/problems/implement-queue-using-stacks/)
 * [#234 Palindrome Linked List](https://leetcode.com/problems/palindrome-linked-list/)
 * [#236 Lowest Common Ancestor of a Binary Tree](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/)
