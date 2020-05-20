@@ -62,8 +62,9 @@ the gap between the 5th and 6th stone is too large.
 
 /**
 Big O Annotation
-Time complexity O(n) where n is the amount of elements in nums.
-Space complexity O(n) where n is the amount of elements in nums.
+Time complexity O(3^n) because of the 3 different choices we have,
+where n is the amount of elements in stones.
+Space complexity O(n) where n is the amount of elements in stones.
 */
 func canCross(_ stones: [Int]) -> Bool {
     
