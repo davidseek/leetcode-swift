@@ -16,6 +16,7 @@ Runtime: 0 ms, faster than 100.00% of Swift online submissions for Valid Parenth
 * [#24 Swap Nodes in Pairs](https://leetcode.com/problems/swap-nodes-in-pairs/)
 * [#42 Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/)
 * [#48 Rotate Image](https://leetcode.com/problems/rotate-image/)
+* [#49 Group Anagrams](https://leetcode.com/problems/group-anagrams/)
 * [#53 Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)
 * [#58 Length of Last Word](https://leetcode.com/problems/length-of-last-word/)
 * [#70 Climbing Stairs](https://leetcode.com/problems/climbing-stairs/)
