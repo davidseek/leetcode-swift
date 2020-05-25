@@ -97,6 +97,7 @@ Runtime: 0 ms, faster than 100.00% of Swift online submissions for Valid Parenth
 * [#993 Cousins in Binary Tree](https://leetcode.com/problems/cousins-in-binary-tree/)
 * [#994 Rotting Oranges](https://leetcode.com/problems/rotting-oranges/)
 * [#997 Find the Town Judge](https://leetcode.com/problems/find-the-town-judge/)
+* [#1008 Construct Binary Search Tree from Preorder Traversal](https://leetcode.com/problems/construct-binary-search-tree-from-preorder-traversal/)
 * [#1167 Minimum Cost to Connect Sticks](https://leetcode.com/problems/minimum-cost-to-connect-sticks/)
 * [#1232 Check If Is Is a Straight Line](https://leetcode.com/problems/check-if-it-is-a-straight-line/)
 * [#1268 Search Suggestions System](https://leetcode.com/problems/search-suggestions-system/)
