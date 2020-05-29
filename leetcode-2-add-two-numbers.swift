@@ -47,122 +47,70 @@ Space complexity O(n) where n is the combined amount of elements in l1 and l2.
 */
 func addTwoNumbers(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {
         
-    var l1Values: [Int] = []
-    var l2Values: [Int] = []
+    // Get a mutable reference to each head of l1 and l2
+    var currentL1: ListNode? = l1
+    var currentL2: ListNode? = l2
+
+    // Create a reference to a node we're going to append on
+    var sumList: ListNode? = ListNode(-1)
+
+    // And a reference to its head
+    var head: ListNode? = sumList
+
+    // The carry for values > 9
+    var carry: Int = 0
     
-    /**
-    Get all values from l1 from root to leave
-    and add them to the respective values array.
-    */
-    l1?.traverseList { value in 
-        l1Values.append(value)
-    }
-    
-    // Same for l2
-    l2?.traverseList { value in 
-        l2Values.append(value)
-    }
-    
-    var result: [Int] = []
-    var carry: Int = 0 
-    var index: Int = 0 
-    
-    /**
-    While clause is true while the current index
-    is at least smaller than either l1 values or l2 values.
-    */
-    while index < l1Values.count || index < l2Values.count {
+    // While we haven't fully iterated both lists yet...
+    while currentL1 != nil || currentL2 != nil {
         
         /**
-        Temporary values used in case
-        we have already reached the end of either list
+        Get a dummy value of 0 for each list
+        in the niche case that either list
+        is longer than the other.
         */
-        var l1: Int = 0 
-        var l2: Int = 0 
+        var value1: Int = 0
+        var value2: Int = 0
         
-        // Check if l1 contains the current index...
-        if l1Values.indices.contains(index) {
-
-            // ... and if so, set as the current value
-            l1 = l1Values[index]
+        // Replace with l1's value if it exists
+        if let l1 = currentL1 {
+            value1 = l1.val
         }
         
         // Same for l2
-        if l2Values.indices.contains(index) {
-            l2 = l2Values[index]
+        if let l2 = currentL2 {
+            value2 = l2.val
         }
         
-        /**
-        Add the current value of l1 and l2 with the
-        carry of the last round. 
-        
-        In the first round the carry is 0
+        // Sum up both values and the last carry
+        let sum: Int = value1 + value2 + carry 
 
-        The carry is the >9 remainder of the mathematical sum.
-        For example 4 + 6 = 10
-        The remainder is 1,
-        the value is 0.
-        */
-        let sum = l1 + l2 + carry 
+        // Get the value < 10
         let value = sum % 10
+
+        // Get the carry if above 10
         carry = sum / 10
+
+        // Add a node with the new value
+        sumList?.next = ListNode(value)
+
+        // And move the head reference
+        sumList = sumList?.next
         
-        result.append(value)
-        index += 1
+        // Move l1 and l2 along as well
+        currentL1 = currentL1?.next
+        currentL2 = currentL2?.next
     }
     
-    /**
-    If the carry is > 0, then we need to add it.
-    Example: 400 + 600 = 1000
-    
-    The above iteration only goes over 3 loops,
-    so the remaining carry of 1 needs to be added here
-    */
+    // If we still have carry left
     if carry > 0 {
-        result.append(carry)
-    }
-    
-    /**
-    Init a dummy list of -1 (or any other value).
-    This will be the object we're appending our new list to
-    */
-    var dummy: ListNode? = ListNode(-1)
-
-    /**
-    Hold a reference to our head of the list
-    so we can later return head.next 
-    to lost the -1 root
-    */ 
-    let head: ListNode? = dummy
-    
-    // Iterate through the result
-    for element in result {
-
-        /** 
-        Set the current's element next to 
-        the new node we want to create
-        */
-        dummy?.next = ListNode(element)
-
         /**
-        And set the dummy to next 
-        of the current element
+        Add a node for the carry.
+        This case could happen on 
+        (9 -> 9) + (1) = (0 -> 0 -> 1)
         */
-        dummy = dummy?.next
+        sumList?.next = ListNode(carry)
     }
     
-    // Return .next to lose the -1 root
+    // Return head.next to lose the -1 dummy head
     return head?.next
-}
-
-extension ListNode {
-    
-    /**
-    Function to get the current and next
-    value in the nodes. Called recursively.
-    */
-    func traverseList(_ result: (Int) -> Void) {
-        result(val)
-        next?.traverseList(result)
-    } 
 }
