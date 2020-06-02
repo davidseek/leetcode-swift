@@ -52,31 +52,11 @@ Explanation: You are given the third node with value 1, the linked list should b
 Big O Annotation
 Time & Space complexity O(1) we're linear in time and space.
 */
-func twoSum(_ nums: [Int], _ target: Int) -> [Int] {
-	
-    /**
-    Creating a map for every element in nums
-    with their respecitve indices.
-    */
-    var map: [Int: Int] = [:]
+func deleteNode(_ node: ListNode?) {
 
-    // Iterate through nums
-    for (index, element) in nums.enumerated() {
-    
-        /**
-        Check if we have a mapped element can be
-        created when substracting the current target
-        with the current element
-        */
-        if let mapped = map[target - element] {
-        
-            // And return their indices
-            return [mapped, index]
-        }
-    
-        // Add the current element to the map
-        map[element] = index
-    }
+    // Set the given node's value to the next one's value
+    node?.val = node?.next?.val ?? Int()
 
-    return []
+    // Set the current node's next to the next node's next
+    node?.next = node?.next?.next    
 }
