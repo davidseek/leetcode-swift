@@ -70,6 +70,7 @@ Runtime: 0 ms, faster than 100.00% of Swift online submissions for Valid Parenth
 * [#349 Intersection of Two Arrays](https://leetcode.com/problems/intersection-of-two-arrays/)
 * [#367 Valid Perfect Square](https://leetcode.com/problems/valid-perfect-square/)
 * [#380 Insert Delete GetRandom O(1)](https://leetcode.com/problems/insert-delete-getrandom-o1/)
+* [#392 Is Subsequence](https://leetcode.com/problems/is-subsequence/)
 * [#402 Remove K Digits](https://leetcode.com/problems/remove-k-digits/)
 * [#403 Frog Jump](https://leetcode.com/problems/frog-jump/)
 * [#412 Fizz Buzz](https://leetcode.com/problems/fizz-buzz/)
